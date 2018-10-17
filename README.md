@@ -12,26 +12,29 @@ You can refer to py-faster-rcnn README.md and faster-rcnn README.md for more inf
 
 Please note that this repository doesn't contain our in-house runtime code used in the published article.
 
-The original py-faster-rcnn is quite slow and there exist lots of inefficient code blocks.
-We improved some of them, by 1) replacing the Caffe backend with its latest version (Sep 1, 2016), and 2) porting our implementation of the proposal layer.
-However it is still slower than our in-house runtime code due to the image pre-processing code written in Python (+9ms) and some poorly implemented parts in Caffe (+5 ms).
-PVANET was trained by our in-house deep learning library, not by this implementation.
-There might be a tiny difference in VOC2012 test results, because some hidden parameters in py-faster-rcnn may be set differently with ours.
-PVANET-lite (76.3% mAP on VOC2012, 10th place) is originally designed to verify the effectiveness of multi-scale features for object detection, so it only uses Inception and hyper features only. Further improvement may be achievable by adding C.ReLU, residual connections, etc.
-Citing PVANET
+* The original py-faster-rcnn is quite slow and there exist lots of inefficient code blocks.
+* We improved some of them, by 1) replacing the Caffe backend with its latest version (Sep 1, 2016), and 2) porting our implementation of the proposal layer.
+* However it is still slower than our in-house runtime code due to the image pre-processing code written in Python (+9ms) and some poorly implemented parts in Caffe (+5 ms).
+* PVANET was trained by our in-house deep learning library, not by this implementation.
+* There might be a tiny difference in VOC2012 test results, because some hidden parameters in py-faster-rcnn may be set differently with ours.
+* PVANET-lite (76.3% mAP on VOC2012, 10th place) is originally designed to verify the effectiveness of multi-scale features for object detection, so it only uses Inception and hyper features only. Further improvement may be achievable by adding C.ReLU, residual connections, etc.
+
+## Citing PVANET
 
 The BibTeX for EMDNN2016-accepted version will be updated soon
 
-Installation
+## Installation
 
-Clone the Faster R-CNN repository
+1. Clone the Faster R-CNN repository
 # Make sure to clone with --recursive
 git clone --recursive https://github.com/sanghoon/pva-faster-rcnn.git
-We'll call the directory that you cloned Faster R-CNN into FRCN_ROOT. Build the Cython modules
+
+2. We'll call the directory that you cloned Faster R-CNN into FRCN_ROOT. Build the Cython modules
 
 cd $FRCN_ROOT/lib
 make
-Build Caffe and pycaffe
+
+3. Build Caffe and pycaffe
 
 cd $FRCN_ROOT/caffe-fast-rcnn
 # Now follow the Caffe installation instructions here:
@@ -41,7 +44,8 @@ cd $FRCN_ROOT/caffe-fast-rcnn
 
 cp Makefile.config.example Makefile.config
 make -j8 && make pycaffe
-Download PVANET caffemodels
+
+4. Download PVANET caffemodels
 
 cd $FRCN_ROOT
 ./models/pvanet/download_models.sh
