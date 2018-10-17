@@ -130,6 +130,9 @@ The BibTeX for EMDNN2016-accepted version will be updated soon
   cd $FRCN_ROOT
   ./tools/test_net.py --gpu 0 --def models/pvanet/lite/test.pt --net models/pvanet/lite/test.model --cfg models/pvanet/cfgs/submit_160715.yml
   ```
+### test.model
+download：https://pan.baidu.com/s/1ea0dpn4Ei_wH1erqTJO59g
+
 
 ### Expected results
 
