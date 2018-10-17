@@ -1,6 +1,9 @@
 ## PVANET: Lightweight Deep Neural Networks for Real-time Object Detection
 by Sanghoon Hong, Byungseok Roh, Kye-hyeon Kim, Yeongjae Cheon, Minje Park (Intel Imaging and Camera Technology)
 
+## Download：
+https://pan.baidu.com/s/149NT5km665LojRVvpPApXA
+
 ### Introduction
 
 This repository is a fork from [py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn) and demonstrates the performance of PVANET.
